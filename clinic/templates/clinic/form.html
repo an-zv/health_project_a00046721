@@ -1,3 +1,6 @@
+{% extends 'clinic/base.html' %}
+
+{% block content %}
 <h1>{{ title }}</h1>
 
 <form method="post">
@@ -7,3 +10,5 @@
 </form>
 
 <p><a href="{% url 'clinic:home' %}">Back to Home</a></p>
+
+{% endblock %}
