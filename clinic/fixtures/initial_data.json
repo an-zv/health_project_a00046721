@@ -1,0 +1,62 @@
+[
+    {
+        "model": "clinic.patient",
+        "pk": 1,
+        "fields": {
+            "name": "Sofia",
+            "email": "sofia@gmail.com",
+            "phone": "693582471"
+        }
+    },
+    {
+        "model": "clinic.doctor",
+        "pk": 1,
+        "fields": {
+            "name": "Dr. Martin",
+            "specialization": "General medicine"
+        }
+    },
+    {
+        "model": "clinic.service",
+        "pk": 1,
+        "fields": {
+            "name": "General Consultation",
+            "price": "50.00"
+        }
+    },
+    {
+        "model": "clinic.service",
+        "pk": 2,
+        "fields": {
+            "name": "X-Ray",
+            "price": "100.00"
+        }
+    },
+    {
+        "model": "clinic.invoice",
+        "pk": 1,
+        "fields": {
+            "patient": 1,
+            "date": "2024-04-27",
+            "status": "pending"
+        }
+    },
+    {
+        "model": "clinic.invoiceitem",
+        "pk": 1,
+        "fields": {
+            "invoice": 1,
+            "service": 1,
+            "quantity": 1
+        }
+    },
+    {
+        "model": "clinic.invoiceitem",
+        "pk": 2,
+        "fields": {
+            "invoice": 1,
+            "service": 2,
+            "quantity": 2
+        }
+    }
+]

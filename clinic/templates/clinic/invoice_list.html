@@ -1,0 +1,19 @@
+{% extends 'clinic/base.html' %}
+
+{% block content %}
+<h1>Invoice List</h1>
+<a class="btn btn-primary" href="{% url 'clinic:invoice_create' %}">Create New Invoice</a>
+
+<ul>
+    {% for invoice in invoices %}
+        <li>
+            <a href="{% url 'clinic:invoice_detail' invoice.id %}">
+                Invoice #{{ invoice.id }} - {{ invoice.patient.name }} 
+            </a>
+            - {{ invoice.status }}
+        </li>
+    {% empty %}
+        <li>No invoices found.</li>
+    {% endfor %}
+</ul>
+{% endblock %}

@@ -1,0 +1,38 @@
+{% extends 'clinic/base.html' %}
+
+{% block content %}
+<h1>Invoice #{{ invoice.id }}</h1>
+
+<a href="{% url 'clinic:invoice_edit' invoice.id %}">Edit Invoice</a> |
+
+<a href="{% url 'clinic:invoice_list' %}">Back to Invoice List</a>
+
+<p><strong>Patient:</strong> {{ invoice.patient.name }}</p>
+<p><strong>Status:</strong> {{ invoice.status }}</p>
+<p><strong>Date:</strong> {{ invoice.date }}</p>
+
+<h2>Items</h2>
+
+<table border="1">
+    <tr>
+        <th>Service</th>
+        <th>Quantity</th>
+        <th>Price</th>
+        <th>Total</th>
+    </tr>
+    {% for item in invoice.invoiceitem_set.all %}
+    <tr>
+        <td>{{ item.service.name }}</td>
+        <td>{{ item.quantity }}</td>
+        <td>{{ item.service.price }}€</td>
+        <td>{{ item.line_total }}€</td>
+    </tr>
+    {% empty %}
+    <tr>
+        <td colspan="4">No items found.</td>
+    </tr>
+    {% endfor %}
+</table>
+
+<h2>Total Amount: {{ invoice.total_amount }}€</h2>
+{% endblock %}

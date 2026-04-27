@@ -1,0 +1,13 @@
+{% extends 'clinic/base.html' %}
+
+{% block content %}
+<h1>Patient List</h1>
+<a class="btn btn-primary" href="{% url 'clinic:patient_create' %}">Create New Patient</a>
+<ul>
+    {% for patient in patients %}
+        <li>{{ patient.name }} - {{ patient.email }} - {{ patient.phone }}</li>
+    {% empty %}
+        <li>No patients found.</li>
+    {% endfor %}
+</ul>
+{% endblock %}

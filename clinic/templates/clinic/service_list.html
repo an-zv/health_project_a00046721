@@ -1,0 +1,14 @@
+{% extends 'clinic/base.html' %}
+
+{% block content %}
+<h1>Service List</h1>
+<a class="btn btn-primary" href="{% url 'clinic:service_create' %}">Create New Service</a>
+
+<ul>
+    {% for service in services %}
+        <li>{{ service.name }} - {{ service.price }}€</li>
+    {% empty %}
+        <li>No services found.</li>
+    {% endfor %}
+</ul>
+{% endblock %}

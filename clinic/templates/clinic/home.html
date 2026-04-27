@@ -1,0 +1,25 @@
+
+{% extends 'clinic/base.html' %}
+
+{% block content %}
+
+<h1>Health Clinic Management System</h1>
+
+<p>Welcome to the clinic invoicing system!</p>
+
+<h2>View Data</h2>
+<ul>
+    <li><a href="{% url 'clinic:patient_list' %}">Patients</a></li>
+    <li><a href="{% url 'clinic:service_list' %}">Services</a></li>
+    <li><a href="{% url 'clinic:invoice_list' %}">Invoices</a></li>
+    <li><a href="/admin/">Admin</a></li>
+</ul>
+
+<h2>Create Data</h2>
+<ul>
+    <li><a href="{% url 'clinic:patient_create' %}">Create Patient</a></li>
+    <li><a href="{% url 'clinic:service_create' %}">Create Service</a></li>
+    <li><a href="{% url 'clinic:invoice_create' %}">Create Invoice</a></li>
+    <li><a href="{% url 'clinic:invoice_item_create' %}">Add Invoice Item</a></li>
+</ul>
+{% endblock %}
