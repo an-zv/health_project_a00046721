@@ -3,7 +3,7 @@
 set -o errexit
 
 pip install -r requirements.txt
-py manage.py collectstatic --noinput
-py manage.py migrate
-py manage.py loaddata users
-py manage.py loaddata initial_data
+python manage.py collectstatic --noinput
+python manage.py migrate
+python manage.py loaddata users
+python manage.py loaddata initial_data
